@@ -49,7 +49,18 @@ public class Calculator {
 		 */
 	}
 	
+	
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
+	
+	/**
+	 * Calculate U=R*I
+	 * @param i Current
+	 * @param r Resistance
+	 * @return  Tension
+	 */
+	private double uFromIandR(double i, double r) {
+		return i*r;
+	}
 	
 }
