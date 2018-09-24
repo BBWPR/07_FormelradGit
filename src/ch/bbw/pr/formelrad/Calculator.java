@@ -51,5 +51,8 @@ public class Calculator {
 	
 	/* Hier die Methoden mit den Formeln hinzufügen
 	 */
+	public double pFromUandI(double u, double i) {
+		return u*i;
+	}
 	
 }
