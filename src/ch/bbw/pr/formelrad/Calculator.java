@@ -62,5 +62,19 @@ public class Calculator {
 	private double uFromIandR(double i, double r) {
 		return i*r;
 	}
+
+	/**
+	 * Calculate U=P/I)
+	 * @param p Power
+	 * @param i Current
+	 * @return  Tension
+	 */
+	private double uFromPandI(double p, double i) throws IllegalArgumentException {
+		if (i==0.0)
+		{
+			throw new IllegalArgumentException("Argument 'Current' is 0");
+		}
+		return p/i;
+	}
 	
 }
