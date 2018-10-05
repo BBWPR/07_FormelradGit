@@ -64,17 +64,29 @@ public class Calculator {
 	}
 
 	/**
-	 * Calculate U=P/I)
+	 * Calculate U=P/I
 	 * @param p Power
 	 * @param i Current
 	 * @return  Tension
 	 */
 	private double uFromPandI(double p, double i) throws IllegalArgumentException {
-		if (i==0.0)
-		{
+		if (i==0.0){
 			throw new IllegalArgumentException("Argument 'Current' is 0");
 		}
 		return p/i;
+	}
+	
+	/**
+	 * Calculate U=SQRT(P*R)
+	 * @param p Power
+	 * @param r Resistance
+	 * @return  Tension
+	 */
+	private double uFromPandR(double p, double r) throws IllegalArgumentException {
+		if ((p*r)<0){
+			throw new IllegalArgumentException("Argument 'Power * Resistance' is < 0");
+		}
+		return Math.sqrt(p*r);
 	}
 	
 }
