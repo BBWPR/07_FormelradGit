@@ -49,9 +49,42 @@ public class Calculator {
 		 */
 	}
 	
-	
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
+	
+	/**
+	 * Calculate Power form Tension and Current
+	 * @param u
+	 * @param i
+	 * @return
+	 */
+	public double pFromUandI(double u, double i) {
+		return u*i;
+	}
+	
+	/**
+	 * Calculate Power form Current and Resistence
+	 * @param i
+	 * @param r
+	 * @return
+	 */
+	public double pFromIandR(double i, double r) {
+		return r*i*i;
+	}
+
+	/**
+	 * Calculate Power form Tension and Resistence
+	 * @param u
+	 * @param r
+	 * @return
+	 * @throws IllegalArgumentException
+	 */
+	public double pFromUandR(double u, double r) throws IllegalArgumentException {
+		if(r==0) {
+			throw new IllegalArgumentException("Resistence is 0.");
+		}
+		return u*u/r;
+	}
 	
 	/**
 	 * Calculate U=R*I
