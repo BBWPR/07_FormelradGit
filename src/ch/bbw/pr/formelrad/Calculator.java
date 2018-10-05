@@ -59,5 +59,11 @@ public class Calculator {
 		return r*i*i;
 	}
 
+	public double pFromUandR(double u, double r) throws IllegalArgumentException {
+		if(r==0) {
+			throw new IllegalArgumentException("Resistence is 0.");
+		}
+		return u*u/r;
+	}
 	
 }
