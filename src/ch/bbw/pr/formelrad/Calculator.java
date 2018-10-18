@@ -136,5 +136,18 @@ public class Calculator {
 		return u/i;
 	}
 	
+	/**
+	 * Calculate R=P/I^2
+	 * @param p Power
+	 * @param i Current
+	 * @return  Resitance
+	 * @throws IllegalArgumentException
+	 */
+	private double rFromPandI(double p, double i) throws IllegalArgumentException {
+		if (i==0.0){
+			throw new IllegalArgumentException("Argument 'Current' is 0");
+		}
+		return p/i/i;
+	}
 	
 }
