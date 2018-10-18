@@ -122,4 +122,19 @@ public class Calculator {
 		return Math.sqrt(p*r);
 	}
 	
+	/**
+	 * Calculate R=U/I
+	 * @param u Power
+	 * @param i Current
+	 * @return  Resistance
+	 * @throws IllegalArgumentException
+	 */
+	private double rFromUandI(double u, double i) throws IllegalArgumentException {
+		if (i==0.0){
+			throw new IllegalArgumentException("Argument 'Current' is 0");
+		}
+		return u/i;
+	}
+	
+	
 }
