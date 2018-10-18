@@ -3,7 +3,7 @@ package ch.bbw.pr.formelrad;
 /**
  * Berechnet das Formelrad
  * @author Peter Rutschmann
- * @version 18.10.2018
+ * @version 21.09.2018
  */
 public class Calculator {
 	private double leistung;
@@ -164,5 +164,47 @@ public class Calculator {
 			throw new IllegalArgumentException("Argument 'Resistance' is 0");
 		}
 		return Math.sqrt(u/r);
+	}
+
+	/**
+	 * Calculate R=U/I
+	 * @param u Power
+	 * @param i Current
+	 * @return  Resistance
+	 * @throws IllegalArgumentException
+	 */
+	private double rFromUandI(double u, double i) throws IllegalArgumentException {
+		if (i==0.0){
+			throw new IllegalArgumentException("Argument 'Current' is 0");
+		}
+		return u/i;
+	}
+	
+	/**
+	 * Calculate R=P/I^2
+	 * @param p Power
+	 * @param i Current
+	 * @return  Resitance
+	 * @throws IllegalArgumentException
+	 */
+	private double rFromPandI(double p, double i) throws IllegalArgumentException {
+		if (i==0.0){
+			throw new IllegalArgumentException("Argument 'Current' is 0");
+		}
+		return p/i/i;
+	}
+	
+	/**
+	 * Calculate R=U*U/P
+	 * @param p Power
+	 * @param u Tension
+	 * @return  Resistance
+	 * @throws IllegalArgumentException
+	 */
+	private double rFromPandU(double p, double u) throws IllegalArgumentException {
+		if (p==0.0){
+			throw new IllegalArgumentException("Argument 'Power' is 0");
+		}
+		return u*u/p;
 	}
 }
