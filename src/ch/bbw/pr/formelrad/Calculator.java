@@ -150,4 +150,18 @@ public class Calculator {
 		return p/i/i;
 	}
 	
+	/**
+	 * Calculate R=U*U/P
+	 * @param p Power
+	 * @param u Tension
+	 * @return  Resistance
+	 * @throws IllegalArgumentException
+	 */
+	private double rFromPandU(double p, double u) throws IllegalArgumentException {
+		if (p==0.0){
+			throw new IllegalArgumentException("Argument 'Power' is 0");
+		}
+		return u*u/p;
+	}
+	
 }
