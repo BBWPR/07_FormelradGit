@@ -3,7 +3,7 @@ package ch.bbw.pr.formelrad;
 /**
  * Berechnet das Formelrad
  * @author Peter Rutschmann
- * @version 21.09.2018
+ * @version 18.10.2018
  */
 public class Calculator {
 	private double leistung;
@@ -121,5 +121,5 @@ public class Calculator {
 		}
 		return Math.sqrt(p*r);
 	}
-	
+
 }
