@@ -185,7 +185,7 @@ public class Calculator {
 		if (r==0.0){
 			throw new IllegalArgumentException("Argument 'Resistance' is 0");
 		}
-		return Math.sqrt(u/r);
+		return u/r;
 	}
 
 	/**
