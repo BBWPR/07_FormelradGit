@@ -43,14 +43,36 @@ public class Calculator {
 				", widerstand="	+ widerstand + "]";
 	}
 
-	public void calculate() {
-		/* Hier auf Grund der vorhanden Werte entscheiden
-		 * welche Methode unten aufgerufen werden muss.
-		 */
-	}
-	
-	/* Hier die Methoden mit den Formlen hinzufügen
+	/**
+	 * Calculate the missing values.
 	 */
+	public void calculate() {
+		if(leistung != 0.0) {
+			if (spannung != 0.0) {
+				strom = iFromPandU(leistung, spannung);
+				widerstand = rFromPandU(leistung, spannung);
+			} else if(strom != 0.0) {
+				spannung = uFromPandI(leistung, strom);
+				widerstand = rFromPandI(leistung, strom);
+			} else if(widerstand != 0.0) {
+				spannung = uFromPandR(leistung, widerstand);
+				strom = iFromPandR(leistung, widerstand);
+			} //else do nothing
+		} else if (spannung != 0.0) {
+			if (strom != 0.0) {
+				leistung = pFromUandI(spannung, strom);
+				widerstand = rFromUandI(spannung, strom);
+			}else if (widerstand != 0.0) {
+				leistung = pFromUandR(spannung, widerstand);
+				strom = iFromUandR(spannung, widerstand);
+			} //else do nothing
+		} else if (strom != 0.0) {
+			if(widerstand != 0.0) {
+				leistung = pFromIandR(strom, widerstand);
+				spannung = uFromIandR(strom, widerstand);
+			} //else do nothing
+		}
+	}
 	
 	/**
 	 * Calculate Power form Tension and Current
@@ -163,7 +185,7 @@ public class Calculator {
 		if (r==0.0){
 			throw new IllegalArgumentException("Argument 'Resistance' is 0");
 		}
-		return Math.sqrt(u/r);
+		return u/r;
 	}
 
 	/**
