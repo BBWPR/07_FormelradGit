@@ -1,7 +1,5 @@
 package ch.bbw.pr.formelrad;
 
-import java.io.FileInputStream;
-
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -25,7 +23,7 @@ public class Main extends Application {
 			Pane root = new Pane();
 
 			// Creating an image
-			Image image = new Image(new FileInputStream("bin\\resources\\formelradelektronik.gif"));
+			Image image = new Image(getClass().getClassLoader().getResourceAsStream("resources/formelradelektronik.gif"));
 			ImageView imageView = new ImageView(image);
 			imageView.setX(10);
 			imageView.setY(10);
